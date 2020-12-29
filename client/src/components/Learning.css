@@ -1,0 +1,42 @@
+.Learning{
+    background-image: url('./learn.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.learnS{
+    font-family: SeoulHangang CBL;
+    font-style: normal;
+    font-weight:bold;
+    font-size: 30px;
+    line-height: 70px;
+    color: #ffffff;
+    padding-top: 50px;
+    text-align: center;
+}
+
+.learnH{
+    font-family: SeoulHangang CBL;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 60px;
+    line-height: 70px;
+    color: #ffffff;
+    padding-top: 90px;
+    text-align: center;
+    text-decoration: underline
+}
+
+#learn{
+margin-top:50px;  
+margin-left: 100px;
+font-family: SeoulHangang CBL;
+font-style: normal;
+font-weight: normal;
+font-size: 56px;
+line-height: 96px;
+/* identical to box height */
+
+
+color:wheat;
+}

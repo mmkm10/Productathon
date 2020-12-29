@@ -28,7 +28,7 @@ class Input extends Component{
           placeholder="Type a message..."
           value={this.props.message}
           onChange={({ target: { value } }) => this.props.setMessage(value)}
-          
+          onKeyPress={event => event.key === 'Enter' ? this.props.sendMessage(event) : null}
         />
         <button className="sendButton" onClick={e => this.props.sendMessage(e)}>Send</button>
       </form>

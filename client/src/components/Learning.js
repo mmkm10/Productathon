@@ -1,4 +1,7 @@
 import React,{Component} from 'react';
+import {Card1} from './Card/Card';
+import './Learning.css';
+import Carousel from 'react-bootstrap/Carousel';
 
 
 class Learning extends Component{
@@ -6,34 +9,27 @@ class Learning extends Component{
         super(props);
     }
 
-    componentDidMount(){
-        fetch("https://google-translate1.p.rapidapi.com/language/translate/v2", {
-	"method": "POST",
-	"headers": {
-		"content-type": "application/x-www-form-urlencoded",
-		"accept-encoding": "application/gzip",
-		"x-rapidapi-key": "01e0eb9d39msh8ea377e9230e0c2p19b6b5jsnc0de51520ee5",
-		"x-rapidapi-host": "google-translate1.p.rapidapi.com"
-	},
-	"body": {
-		"q": "Hello, world!",
-		"source": "en",
-		"target": "es"
-	}
-    })
-    .then(response => {
-        console.log(response);
-    })
-    .catch(err => {
-        console.error(err);
-    });
-        }
 
     render(){
         return(
-            <div>
-                Hello, Learning this side!
+            <div className="Learning">
+            <div className="learnS">कल्पयति येन वृत्तिं येन च लोके प्रशस्यते सद्भिः।<br />
+                स गुणस्तेन च गुणिना रक्ष्यः संवर्धनीयश्च॥</div>
+            <div className="learnH">स्वाध्याय</div>
+            <Carousel>
+                <Carousel.Item>
+                    <Card1 />
+                    <Card1 />
+                </Carousel.Item>
+                <Carousel.Item>
+                    <Card1 />
+                    <Card1 />
+                </Carousel.Item>
+                
+            </Carousel>
             </div>
+                
+           
         )
     }
 }

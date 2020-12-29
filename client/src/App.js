@@ -11,15 +11,11 @@ import Chat from './components/Writing/Chat/Chat'
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-        <Navbar />
         <Route path="/write" exact component={Writing} />
         <Route path="/chat" component={Chat} />
         <Route exact path="/" render={(props)=><Home/>} />
         <Route path="/learn" render={(props)=><Learning/>}/>
         <Route path="/practice" render={(props)=><Practice/>}/>
-        <Footer/>
-      </div>
     </BrowserRouter>
 
   );
