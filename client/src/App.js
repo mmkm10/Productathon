@@ -7,6 +7,7 @@ import Practice from './components/Practice';
 import Learning from './components/Learning';
 import Writing from './components/Writing/Join/Join';
 import Chat from './components/Writing/Chat/Chat'
+import Game from './components/Game';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route exact path="/" render={(props)=><Home/>} />
         <Route path="/learn" render={(props)=><Learning/>}/>
         <Route path="/practice" render={(props)=><Practice/>}/>
+        <Route path="/memory-game" render={(props)=><Game/>}/>
     </BrowserRouter>
 
   );

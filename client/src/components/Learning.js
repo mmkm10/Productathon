@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import {Card1} from './Card/Card';
 import './Learning.css';
 import Carousel from 'react-bootstrap/Carousel';
+import Grammar from './Grammar';
 
 
 class Learning extends Component{
@@ -25,8 +26,80 @@ class Learning extends Component{
                     <Card1 />
                     <Card1 />
                 </Carousel.Item>
-                
+                <Carousel.Item>
+                    <Card1 />
+                    <Card1 />
+                </Carousel.Item>
+                <Carousel.Item>
+                    <Card1 />
+                    <Card1 />
+                </Carousel.Item>
+                <Carousel.Item>
+                    <Card1 />
+                    <Card1 />
+                </Carousel.Item>
+                <Carousel.Item>
+                    <Card1 />
+                    <Card1 />
+                </Carousel.Item>
+                <Carousel.Item>
+                    <Card1 />
+                    <Card1 />
+                </Carousel.Item>
+                <Carousel.Item>
+                    <Card1 />
+                    <Card1 />
+                </Carousel.Item>
+                <Carousel.Item>
+                    <Card1 />
+                    <Card1 />
+                </Carousel.Item>
+                <Carousel.Item>
+                    <Card1 />
+                    <Card1 />
+                </Carousel.Item>
+                <Carousel.Item>
+                    <Card1 />
+                    <Card1 />
+                </Carousel.Item>
+                <Carousel.Item>
+                    <Card1 />
+                    <Card1 />
+                </Carousel.Item>
+                <Carousel.Item>
+                    <Card1 />
+                    <Card1 />
+                </Carousel.Item>
+                <Carousel.Item>
+                    <Card1 />
+                    <Card1 />
+                </Carousel.Item>
+                <Carousel.Item>
+                    <Card1 />
+                    <Card1 />
+                </Carousel.Item>
+                <Carousel.Item>
+                    <Card1 />
+                    <Card1 />
+                </Carousel.Item>
+                <Carousel.Item>
+                    <Card1 />
+                    <Card1 />
+                </Carousel.Item>
+                <Carousel.Item>
+                    <Card1 />
+                    <Card1 />
+                </Carousel.Item>
+                <Carousel.Item>
+                    <Card1 />
+                    <Card1 />
+                </Carousel.Item>
+                <Carousel.Item>
+                    <Card1 />
+                    <Card1 />
+                </Carousel.Item>
             </Carousel>
+            <Grammar />
             </div>
                 
            
