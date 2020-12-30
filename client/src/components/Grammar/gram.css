@@ -1,0 +1,12 @@
+.foo{
+    background: linear-gradient(to right, #13003F , #4F0258);
+    background-size: cover;
+    font-family: SeoulHangang CBL;
+    font-style: normal;
+    font-weight:normal;
+    font-size: 20px;
+    line-height: 40px;
+    color: #ffffff;
+    text-align: left;
+    padding: 100px 300px;
+}

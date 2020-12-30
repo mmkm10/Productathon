@@ -1,126 +1,164 @@
-$itemsCount: 6; // Adjust if tabs number changes
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+$hexagon-width: 250px;
+$hexagon-height: $hexagon-width*.55;
+$hexagon-margin: 25px;
+$hexagon-title-color: #fff;
+$hexagon-border-color: #fff;
+$hexagon-border-color--hover: #13003F;
+$hexagon-image-color: #7d67a8;
+$honeycomb-max-width: 1200px;
+$viewport-thereshold: $hexagon-width + $hexagon-margin;
 
-// General
-body {
-  background: #E3B23C;
-  font-family: 'Open Sans', sans-serif;
-}
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 
-h1 {
-  margin: 0;
-  font-size: 22px;
-  line-height: 1;
-  color: #423E37;
-}
 
-// Layout
-.page {
-  width: 100vw;
-  height: 100vh;
-  min-height: 700px;
-  overflow: hidden;
-}
 
-// Tabs
-.tabs-controls {
-  position: relative;
-  z-index: 10;
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
+*, *::before, *::after {
   box-sizing: border-box;
-  padding: 50px 0 100px;
-  list-style-type: none;
 }
 
-.tabs-controls__link {
-  position: relative;
-  display: block;
-  padding: 16px 32px;
-  font-size: 20px;
-  font-weight: 700;
-  color: #423E37;
-  text-transform: uppercase;
-  text-decoration: none;
-
-  &:after {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: block;
-    width: 0;
-    height: 4px;
-    background-color: #423E37;
-    border-radius: 2px;
-    margin: auto;
-    content: '';
-    transition: width 0.4s;
-  }
-}
-
-.tabs-controls__link--active {
-  &:after {
-    width: 100%;
-  }
-}
-
-// Cards
-.cards-container {
-  position: relative;
-  z-index: 1;
-  width: 500px;
-  height: calc(100vh - 205px);
-  margin: 0 auto;
-}
-
-.carding {
-  position: absolute;
-  width: 500px;
-  height: 300px;
-  background-color: #EDEBD7;
-  border: 1px solid #423E37;
-  box-shadow: 9px 11px 3px 0px rgba(0, 0, 0, 0.2);
-  box-sizing: border-box;
-  padding: 40px;
-
-  transition: transform 0.3s, opacity 0.2s;
-
-  &.hidden {
-    z-index: 100;
-    background-color: #fff;
+.linkey{
     color: #fff;
-    opacity: 0;
+    font-size: 40px;
+}
 
-    transition: color 0.5s, background-color 0.5s, transform 1s, opacity 0.2s 0.4s;
+.honeycomb {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  max-width: $honeycomb-max-width;
+  margin: 200px;
+  padding: 0;
+  transform: translateY(#{$hexagon-height/4});
 
-    h1 {
+  &-cell {
+    flex: 0 1 $hexagon-width;
+    max-width: $hexagon-width;
+    height: $hexagon-height;
+    margin: $hexagon-height/2.1 $hexagon-margin/2 $hexagon-margin;
+    position: relative;
+    padding: 0.5em;
+
+    text-align: center;
+    z-index: 1;
+
+
+    &__title {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      hyphens: auto;
+      word-break: break-word;
+      text-transform: uppercase;
       color: #fff;
-
-      transition: color 0.5s
+      font-weight: 700;
+      font-size: 1.75em;
+      transition: opacity 350ms;
+      
+      > small {
+        font-weight: 300;
+        margin-top: 0.25em;
+      }
     }
 
-    @for $i from 1 through $itemsCount {
-      &:nth-of-type(#{$i}) {
-        transform: rotate(random(100) - 100 + deg) translateX((random(1) + 100) * 1%) translateY(random(60) * -1%) scale(random(10)*0.1) skewX(random(12) + deg) skewY(random(12) + deg);
+    &__image {
+      object-fit: cover;
+      object-position: center;
+    }
+    
+    &::before, &::after {
+      content: '';
+    }
+
+    &::before, &::after, &__image {
+      top: -50%;
+      left: 0;
+      width: 100%;
+      height: 200%;
+      display: block;
+      position: absolute;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      z-index: -1;
+    }
+
+    &::before {
+      background: $hexagon-border-color;
+      transform: scale(1.055);
+    }
+
+    &::after {
+      background: $hexagon-image-color;
+      opacity: 0.5;
+      transition: opacity 350ms;
+    }
+
+    &:hover {
+      
+      .honeycomb-cell__title {
+        opacity: 0;
+      }
+      
+      &::before {
+        background: $hexagon-border-color--hover;
+      }
+
+      &::after {
+        opacity: 0;
       }
     }
   }
 
-  @for $i from 1 through $itemsCount {
-    $zIndexStartValue: $itemsCount + 1; // we don't want an item with 0 index
-    $xValue: ($i - 1) * 10px; // we want to start translating from 0
-    $yValue: ($i - 1) * 10px; // we want to start translating from 0
-    $zIndexValue: $itemsCount - $i; // reverse the z-index, so first item is on top
+  &__placeholder{
+    display:none;
+    opacity: 0;
+    width: $hexagon-width;
+    margin: 0 $hexagon-margin/2;
+  }
+}
 
-    &:nth-of-type(#{$i}) {
-      z-index: $zIndexValue;
-      transform: translateX(#{$xValue}) translateY(#{$yValue});
-    }
+@media (max-width:#{2*$viewport-thereshold}){
+  .honeycomb-cell {
+    margin: #{$hexagon-margin/2 + $hexagon-height/2} $hexagon-margin;
+  }
+}
+
+@media (min-width: #{2*$viewport-thereshold}) and (max-width:#{3*$viewport-thereshold}){
+  .honeycomb-cell:nth-child(3n) {
+    margin-right: calc(50% - #{$hexagon-width/2});
+    margin-left: calc(50% - #{$hexagon-width/2});
+  }
+
+  .honeycomb__placeholder:nth-child(3n + 5) {
+    display:block;
+  }
+}
+
+@media (min-width: #{3*$viewport-thereshold}) and (max-width:#{4*$viewport-thereshold}) {
+  .honeycomb-cell:nth-child(5n + 4) {
+    margin-left: calc(50% - #{$hexagon-width + $hexagon-margin});
+  }
+
+  .honeycomb-cell:nth-child(5n + 5) {
+    margin-right: calc(50% - #{$hexagon-width + $hexagon-margin});
+  }
+
+  .honeycomb__placeholder:nth-child(5n), .honeycomb__placeholder:nth-child(5n + 3) {
+    display:block;
+  }
+}
+
+@media (min-width: #{4*$viewport-thereshold}) {
+  .honeycomb-cell:nth-child(7n + 5)  {
+    margin-left: calc(50% - #{$hexagon-width*1.5 + $hexagon-margin});
+  }
+
+  .honeycomb-cell:nth-child(7n + 7), .honeycomb-cell:nth-child(7n + 5):nth-last-child(2) {
+    margin-right: calc(50% - #{$hexagon-width*1.5 + $hexagon-margin});
+  }
+
+  .honeycomb__placeholder:nth-child(7n + 7), .honeycomb__placeholder:nth-child(7n + 9), .honeycomb__placeholder:nth-child(7n + 11){
+    display:block;
   }
 }
