@@ -10,6 +10,16 @@ import Chat from './components/Writing/Chat/Chat'
 import Game from './components/Game';
 import Sandhi from './components/Grammar/Sandhi';
 import Word from './WordFinder/word';
+import Prayavachi from './components/Grammar/Prayavachi';
+import Alankar from './components/Grammar/Alankar';
+import Avyay from './components/Grammar/Avyay';
+import Karak from './components/Grammar/Karak';
+import Kriya from './components/Grammar/Kriya';
+import Samas from './components/Grammar/Samas';
+import Upsarga from './components/Grammar/Upsarga';
+import Vilom from './components/Grammar/Vilom';
+import Pratyay from './components/Grammar/Pratyay';
+import Shabroop from './components/Grammar/ShabRoop';
 
 function App() {
   return (
@@ -21,6 +31,16 @@ function App() {
         <Route path="/practice" render={(props)=><Practice/>}/>
         <Route path="/game" render={(props)=><Word/>}/>
         <Route path="/sandhi" render={(props)=><Sandhi/>}/>
+        <Route path="/alankar" render={(props)=><Alankar/>}/>
+        <Route path="/avyay" render={(props)=><Avyay/>}/>
+        <Route path="/karak" render={(props)=><Karak/>}/>
+        <Route path="/kriya" render={(props)=><Kriya/>}/>
+        <Route path="/pratyay" render={(props)=><Pratyay/>}/>
+        <Route path="/prayavachi" render={(props)=><Prayavachi/>}/>
+        <Route path="/samas" render={(props)=><Samas/>}/>
+        <Route path="/shabroop" render={(props)=><Shabroop/>}/>
+        <Route path="/upsarga" render={(props)=><Upsarga/>}/>
+        <Route path="/vilom" render={(props)=><Vilom/>}/>
     </BrowserRouter>
 
   );
